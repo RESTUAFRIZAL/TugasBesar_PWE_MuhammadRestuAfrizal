@@ -42,7 +42,6 @@
                     <h3>{{ $item->nama_produk }}</h3>
                     <p class="price">{{ $item->harga }}</p>
                     <p class="description">{{ $item->deskripsi }}</p>
-                    {{-- <button class="card-button"> Edit </button> --}}
                     <form action="{{url('/produk/edit/'. $item->kode_produk)}}" method="GET">
                         @csrf
                         @method('UPDATE')
