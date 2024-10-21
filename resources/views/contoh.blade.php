@@ -8,55 +8,57 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
 </head>
 <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Dashboard Penjualan</h2>
+        <ul>
+            <li><a href="{{ url('contoh') }}">Home</a></li>
+            <li><a href="{{ url('produk') }}">Produk</a></li>
+            <li><a href="#">Penjualan</a></li>
+            <li><a href="#">Laporan</a></li>
+            <li><a href="#">Pengaturan</a></li>
+        </ul>
+    </div>
 
-<!-- Sidebar -->
-<div class="sidebar">
-    <h2>Dashboard Penjualan</h2>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Produk</a></li>
-        <li><a href="#">Penjualan</a></li>
-        <li><a href="#">Laporan</a></li>
-        <li><a href="#">Pengaturan</a></li>
-    </ul>
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Selamat Datang di Dashboard Penjualan</h1>
+        </header>
 
-<!-- Main Content -->
-<div class="main-content">
-    <header>
-        <h1>Selamat Datang di Dashboard Penjualan</h1>
-    </header>
+        <!-- Stats Cards -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Produk</h3>
+                <p id="total-products">{{ $totalProducts }}</p>
+            </div>
+            <div class="card">
+                <h3>Penjualan Hari Ini</h3>
+                <p id="sales-today">{{ $salesToday }}</p>
+            </div>
+            <div class="card">
+                <h3>Total Pendapatan</h3>
+                <p id="total-revenue">{{ $totalRevenue }}</p>
+            </div>
+            <div class="card">
+                <h3>Pengguna Terdaftar</h3>
+                <p id="registered-users">350</p>
+            </div>
+        </div>
 
-    <!-- Stats Cards -->
-    <div class="cards">
-        <div class="card">
-            <h3>Total Produk</h3>
-            <p id="total-products">320</p>
+        <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
         </div>
-        <div class="card">
-            <h3>Penjualan Hari Ini</h3>
-            <p id="sales-today">100</p>
-        </div>
-        <div class="card">
-            <h3>Total Pendapatan</h3>
-            <p id="total-revenue">Rp 50,000,000</p>
-        </div>
-        <div class="card">
-            <h3>Pengguna Terdaftar</h3>
-            <p id="registered-users">350</p>
+
+        <!-- Sales Chart -->
+        <div id="chart">
+            <h2>Grafik Penjualan Bulanan</h2>
+            <canvas id="salesChart"></canvas>
         </div>
     </div>
 
-    <div class="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
-    </div>
-
-    <!-- Sales Chart -->
-    <div id="chart">
-        <h2>Grafik Penjualan Bulanan</h2>
-        <canvas id="salesChart"></canvas>
-    </div>
-</div>
-
+    <footer>
+        <p>&copy; 2024 Aplikasi Penjualan. All rights reserved.</p>
+    </footer>
 </body>
 </html>
